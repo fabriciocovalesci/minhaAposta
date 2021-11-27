@@ -3,11 +3,11 @@ import React from "react";
 
 import { View, Text, Image } from "react-native";
 
-export default function Sobre({ route }){
+export default function Quina(){
     return (
         <View>
             <Text>
-                Desenvolvido por { route.params?.nome }
+                Quina
             </Text>
         </View>
     )

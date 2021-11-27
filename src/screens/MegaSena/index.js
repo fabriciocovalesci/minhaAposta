@@ -3,11 +3,11 @@ import React from "react";
 
 import { View, Text, Image } from "react-native";
 
-export default function Sobre({ route }){
+export default function MegaSena(){
     return (
         <View>
             <Text>
-                Desenvolvido por { route.params?.nome }
+                MegaSena
             </Text>
         </View>
     )

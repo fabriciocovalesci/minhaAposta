@@ -3,7 +3,7 @@ import React from "react";
 
 import { StyleSheet, View, Text } from "react-native";
 
-export default function Card(props){
+export default function CardTitle(props){
     return (
         <View style={styles.container}>
             <View style={styles.card_template}>
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
         boxShadow: "10px 10px 17px -12px rgba(0,0,0,0.75)",
         justifyContent: "center",
         alignItems: "center",
+        marginTop: 25
       },
       container_text: {
         justifyContent: 'center',
