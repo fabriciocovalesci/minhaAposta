@@ -6,19 +6,22 @@ import { Pressable, VStack, Center } from 'native-base';
 
 import CardTitle from "../../components/CardTitle";
 import CardLoteria from "../../components/CardLoteria";
+import FooterMenu from "../../components/FooterMenu";
 
-export default function Home({ navigation }){
+export default function Home({ navigation, route }) {
     return (
-        <View>
+        <View style={{ flex: 1 }}>
             <Center>
 
-            <CardTitle title="Minha Aposta" subtitle="Aplicativo mobile para gerenciar suas apostas na loteria da Caixa."/>
+                <CardTitle title="Minha Aposta" subtitle="Aplicativo mobile para gerenciar suas apostas na loteria da Caixa." />
             </Center>
 
             <VStack mt="4" space={2} alignItems="center">
 
                 <Pressable
-                   onPress={ () => navigation.navigate('MegaSena')}
+                    onPress={() =>{
+                        console.log(route),
+                        navigation.navigate('MegaSena')}}
                 >
                     <Center w="64" _text={{
                         color: "white",
@@ -27,7 +30,7 @@ export default function Home({ navigation }){
                 </Pressable>
 
                 <Pressable
-                    onPress={ () => navigation.navigate('LotoFacil')}
+                    onPress={() => navigation.navigate('LotoFacil')}
                 >
                     <Center w="64" _text={{
                         color: "white",
@@ -36,7 +39,7 @@ export default function Home({ navigation }){
                 </Pressable>
 
                 <Pressable
-                    onPress={ () => navigation.navigate('LotoMania')}
+                    onPress={() => navigation.navigate('LotoMania')}
                 >
                     <Center w="64" _text={{
                         color: "white",
@@ -45,7 +48,7 @@ export default function Home({ navigation }){
                 </Pressable>
 
                 <Pressable
-                    onPress={ () => navigation.navigate('Quina')}
+                    onPress={() => navigation.navigate('Quina')}
                 >
                     <Center w="64" _text={{
                         color: "white",
@@ -53,13 +56,10 @@ export default function Home({ navigation }){
                     }} h="10" bg="primary.500" rounded="md" shadow={3} >Quina</Center>
                 </Pressable>
             </VStack>
-    
-            
 
-            {/* <Button 
-            title="Sobre"
-            onPress={ () => navigation.navigate('Sobre', { nome: "Fabricio" })}
-            /> */}
+            <View style={{ position: 'absolute', left: 0, right: 0, bottom: 0 }}>
+                <FooterMenu />
+            </View>
         </View>
     )
 }
@@ -69,11 +69,11 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "row"
     },
-    container:{
+    container: {
         flex: 1,
         flexDirection: "row",
     },
-    card_template:{
+    card_template: {
         // flexDirection: "row",
         justifyContent: "space-around",
         backgroundColor: '#303F9F',
@@ -84,8 +84,8 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         marginTop: 25,
-      },
-      cards: {
+    },
+    cards: {
         flexDirection: "row"
-      }
+    }
 });
