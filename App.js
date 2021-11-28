@@ -14,6 +14,7 @@ import GeradorSoteio from './src/screens/GeradorSorteio';
 import Perfil from './src/screens/Perfil';
 import Estatisticas from './src/screens/Estatisticas';
 import UltimosResultados from './src/screens/UltimosResultados';
+import NumerosSorte from './src/screens/NumerosSorte'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack';
@@ -45,6 +46,7 @@ export default function App() {
           <Stack.Screen name="Perfil" component={Perfil} />
           <Stack.Screen name="Resultados" component={UltimosResultados} />
           <Stack.Screen name="Estatisticas" component={Estatisticas} />
+          <Stack.Screen name="NumerosSorte" component={NumerosSorte} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
