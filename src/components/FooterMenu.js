@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useNavigation } from '@react-navigation/native'
 
 import {
   NativeBaseProvider,
@@ -19,8 +20,9 @@ import {
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { View } from 'native-base';
 
-export default function FooterMenu({ navigation }) {
+export default function FooterMenu() {
   const [selected, setSelected] = React.useState(1);
+  const navigation = useNavigation()
   return (
     <NativeBaseProvider>
     <View>
@@ -34,8 +36,7 @@ export default function FooterMenu({ navigation }) {
             flex={1}
             onPress={() => {
               setSelected(0),
-              console.log(navigation)
-            // navigation.navigate('Home')
+            navigation.navigate('Home')
             }}>
             <Center>
               <Icon
@@ -56,10 +57,13 @@ export default function FooterMenu({ navigation }) {
 
           <Pressable
             cursor="pointer"
-            opacity={selected === 2 ? 1 : 0.6}
+            opacity={selected === 1 ? 1 : 0.6}
             py="2"
             flex={1}
-            onPress={() => setSelected(2)}
+            onPress={() => { 
+              setSelected(1),
+              navigation.navigate('Gerador')
+            }}
           >
             <Center>
               <Icon
@@ -80,10 +84,13 @@ export default function FooterMenu({ navigation }) {
           
           <Pressable
             cursor="pointer"
-            opacity={selected === 1 ? 1 : 0.5}
+            opacity={selected === 2 ? 1 : 0.5}
             py="2"
             flex={1}
-            onPress={() => setSelected(1)}
+            onPress={() => { 
+              setSelected(2),
+              navigation.navigate("Estatisticas")
+            }}
           >
             <Center>
               <Icon
@@ -103,7 +110,10 @@ export default function FooterMenu({ navigation }) {
             opacity={selected === 3 ? 1 : 0.5}
             py="2"
             flex={1}
-            onPress={() => setSelected(3)}
+            onPress={() => {
+              setSelected(3),
+              navigation.navigate("Perfil")
+            }}
           >
             <Center>
               <Icon
