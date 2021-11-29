@@ -10,7 +10,7 @@ import CardTitle from "../../components/CardTitle";
 
 export default function GeradorSoteio(){
     return (
-        <View style={{ flex: 1 }}>
+        <View>
             <Center>
                 <CardTitle title="Gerador de  sorteios" subtitle="Os números são gerados de maneira aleatória, evitando as sequencias já sorteadas." />
                 <Box
@@ -27,10 +27,6 @@ export default function GeradorSoteio(){
                     This is a Box
                 </Box>
             </Center>
-
-            <View style={{ position: 'absolute', left: 0, right: 0, bottom: 0 }}>
-                <FooterMenu />
-            </View>
         </View>
     )
 }

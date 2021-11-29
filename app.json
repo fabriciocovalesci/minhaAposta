@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "minhaAposta",
+    "name": "Minha Aposta",
     "slug": "minhaAposta",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -16,6 +16,11 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -23,7 +28,9 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.fabriciocovalesci.minhaaposta",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"

@@ -1,16 +1,15 @@
 import React from "react";
-
+import { useNavigation } from "@react-navigation/native";
 import { View, Text, Button, StyleSheet } from "react-native";
 
 import { Pressable, VStack, Center } from 'native-base';
 
 import CardTitle from "../../components/CardTitle";
-import CardLoteria from "../../components/CardLoteria";
-import FooterMenu from "../../components/FooterMenu";
 
-export default function Home({ navigation, route }) {
+export default function Home({ route }) {
+    const navigation = useNavigation()
     return (
-        <View style={{ flex: 1 }}>
+        <View>
             <Center>
 
                 <CardTitle title="Minha Aposta" subtitle="Aplicativo mobile para gerenciar suas apostas na loteria da Caixa." />
@@ -56,10 +55,6 @@ export default function Home({ navigation, route }) {
                     }} h="10" bg="primary.500" rounded="md" shadow={3} >Quina</Center>
                 </Pressable>
             </VStack>
-
-            <View style={{ position: 'absolute', left: 0, right: 0, bottom: 0 }}>
-                <FooterMenu />
-            </View>
         </View>
     )
 }
