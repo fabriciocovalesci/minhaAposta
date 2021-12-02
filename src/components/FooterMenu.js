@@ -92,7 +92,7 @@ export default function FooterMenu() {
                   </Actionsheet.Item>
                   <Actionsheet.Item>
                     <Button onPress={() => {
-                      navigation.navigate("NumerosSorte"),
+                      navigation.navigate("Favoritos"),
                         onClose()
                     }}>
                       Meus números da sorte</Button>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { View, Text, StatusBar, Button, StyleSheet } from "react-native";
 
 import { Pressable, VStack, Center } from 'native-base';
 
@@ -11,16 +11,14 @@ export default function Home({ route }) {
     return (
         <View>
             <Center>
-
                 <CardTitle title="Minha Aposta" subtitle="Aplicativo mobile para gerenciar suas apostas na loteria da Caixa." />
             </Center>
-
             <VStack mt="4" space={2} alignItems="center">
-
                 <Pressable
-                    onPress={() =>{
+                    onPress={() => {
                         console.log(route),
-                        navigation.navigate('MegaSena')}}
+                            navigation.navigate('MegaSena');
+                    }}
                 >
                     <Center w="64" _text={{
                         color: "white",
