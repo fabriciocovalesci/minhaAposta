@@ -9,6 +9,7 @@ import LotoMania from '../screens/LotoMania';
 import Quina from '../screens/Quina';
 import GeradorSoteio from '../screens/GeradorSorteio';
 import UltimosResultados from '../screens/UltimosResultados';
+import Favoritos from '../screens/Favoritos'
 
 
 let Stack = createStackNavigator();
@@ -22,6 +23,7 @@ const StackNavigator = () => (
         <Stack.Screen name="Quina" component={Quina} />
         <Stack.Screen name="Gerador" component={GeradorSoteio} />
         <Stack.Screen name="Resultados" component={UltimosResultados} />
+        <Stack.Screen name="Favoritos" component={Favoritos} />
     </Stack.Navigator>
 );
 

@@ -1,16 +1,20 @@
 
 import React from "react";
+import { useNavigation } from "@react-navigation/core"
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import StackNavigator from "./router.Stack";
 import Estatisticas from "../screens/Estatisticas";
 import Favoritos from '../screens/Favoritos';
-
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import SubMenu from "./router.SubMenu";
 
 const Tab = createBottomTabNavigator();
 
-const TabNavigation = () => (
+const TabNavigation = () => {
+    const navigation = useNavigation()
+    return (
+    
     <Tab.Navigator
         tabBarOptions={{
             activeTintColor: '#b55031',
@@ -33,21 +37,27 @@ const TabNavigation = () => (
             component={StackNavigator}
             options={{
                 headerShown: false,
-                tabBarLabel: 'Home',
                 tabBarIcon: ({ color, size }) => (
-                    <MaterialCommunityIcons name="home" color={color} size={size} />
+                    <MaterialCommunityIcons name="home" size={size} color={color} />
                 ),
             }}
         />
         <Tab.Screen
             name="Menu"
-            component={Estatisticas}
-            options={({ navigation }) => ({
+            component={SubMenu}
+            listeners={({ navigation, route }) => ({
+                tabPress: () => {
+                  return <SubMenu status={true} />         
+                },
+              })}
+            options={{
+                tabBarOnPress: () => ({ navigation }) => {
+                console.log('oi')},
                 tabBarLabel: 'Menu',
                 tabBarIcon: ({ color, size }) => (
-                    <MaterialCommunityIcons name="menu" size={size} color={color} />
+                    <MaterialCommunityIcons name="menu" color={color} size={size} />
                 ),
-            })}
+            }}
         />
         <Tab.Screen
             name="Estatisticas"
@@ -70,6 +80,7 @@ const TabNavigation = () => (
             }}
         />
     </Tab.Navigator>
-);
+)
+        }
 
 export default TabNavigation;
