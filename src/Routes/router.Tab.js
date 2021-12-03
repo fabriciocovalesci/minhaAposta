@@ -9,6 +9,8 @@ import Estatisticas from "../screens/Estatisticas";
 import Favoritos from '../screens/Favoritos';
 import SubMenu from "./router.SubMenu";
 
+import GeradorSoteio from "../screens/GeradorSorteio";
+
 const Tab = createBottomTabNavigator();
 
 const TabNavigation = () => {
@@ -33,8 +35,8 @@ const TabNavigation = () => {
             tabBarActiveTintColor: '#fff',
         }}>
         <Tab.Screen
-            name="Home"
-            component={StackNavigator}
+            name="Gerador"
+            component={GeradorSoteio}
             options={{
                 headerShown: false,
                 tabBarIcon: ({ color, size }) => (
